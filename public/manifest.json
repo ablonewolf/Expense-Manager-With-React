@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Expense Manager With React",
+  "name": "A UI for an Expense Manager application developed with React",
   "icons": [
     {
       "src": "favicon.ico",
