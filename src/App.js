@@ -30,22 +30,13 @@ function App() {
         <div>
             <h2>Let's get started!</h2>
             <ExpenseItem
-                title={expenses[0].title}
-                date={expenses[0].date}
-                amount={expenses[0].amount}
-                description={expenses[0].description}
+                expense = {expenses[0]}
             />
             <ExpenseItem
-                title={expenses[1].title}
-                date={expenses[1].date}
-                amount={expenses[1].amount}
-                description={expenses[1].description}
+                expense = {expenses[1]}
             />
             <ExpenseItem
-                title={expenses[2].title}
-                date={expenses[2].date}
-                amount={expenses[2].amount}
-                description={expenses[2].description}
+                expense = {expenses[2]}
             />
         </div>
     );
