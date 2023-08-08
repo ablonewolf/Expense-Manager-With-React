@@ -7,3 +7,11 @@
     border-radius: 12px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
 }
+
+.expenses h1 {
+    font-size: 2rem;
+    flex: 1;
+    margin: 0 1rem;
+    text-align: center;
+    color: whitesmoke;
+}
