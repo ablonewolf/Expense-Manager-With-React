@@ -1,5 +1,5 @@
-import {DisplayExpenses} from "./components/DisplayExpenses";
-import './components/Expenses.css';
+import {DisplayExpenses} from "./components/Expenses/DisplayExpenses";
+import './components/Expenses/Expenses.css';
 
 function App() {
 
