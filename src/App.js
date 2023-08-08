@@ -1,4 +1,4 @@
-import ExpenseItem from "./components/ExpenseItem";
+import {DisplayExpenses} from "./components/DisplayExpenses";
 
 function App() {
 
@@ -28,14 +28,8 @@ function App() {
 
     return (
         <div>
-            <ExpenseItem
-                expense = {expenses[0]}
-            />
-            <ExpenseItem
-                expense = {expenses[1]}
-            />
-            <ExpenseItem
-                expense = {expenses[2]}
+            <DisplayExpenses
+                expenses={expenses}
             />
         </div>
     );
