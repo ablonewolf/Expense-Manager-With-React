@@ -1,5 +1,5 @@
 import {DisplayExpenses} from "./components/Expenses/DisplayExpenses";
-import './components/Expenses/Expenses.css';
+import './components/Expenses/styles/Expenses.css';
 
 function App() {
 

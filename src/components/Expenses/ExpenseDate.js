@@ -1,9 +1,9 @@
 // noinspection JSCheckFunctionSignatures
 // noinspection JSCheckFunctionSignatures
 
-import './ExpenseDate.css';
+import './styles/ExpenseDate.css';
 
-export function ExpenseDate(props) {
+export const ExpenseDate = (props) => {
     // noinspection JSCheckFunctionSignatures
     const month = props.date.toLocaleString('en-US', {month: 'long'});
     const day = props.date.toLocaleString('en-US', {day: '2-digit'});
