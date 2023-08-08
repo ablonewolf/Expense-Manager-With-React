@@ -1,4 +1,5 @@
 import {DisplayExpenses} from "./components/DisplayExpenses";
+import './components/Expenses.css';
 
 function App() {
 
@@ -27,11 +28,11 @@ function App() {
     ]
 
     return (
-        <div>
+        <>
             <DisplayExpenses
                 expenses={expenses}
             />
-        </div>
+        </>
     );
 }
 
