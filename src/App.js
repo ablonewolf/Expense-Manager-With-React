@@ -1,5 +1,6 @@
 import {DisplayExpenses} from "./components/Expenses/DisplayExpenses";
 import './components/Expenses/styles/Expenses.css';
+import {NewExpense} from "./components/Expenses/NewExpense/NewExpense";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
 
     return (
         <>
+            <NewExpense/>
             <DisplayExpenses
                 expenses={expenses}
             />
