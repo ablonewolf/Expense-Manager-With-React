@@ -16,51 +16,82 @@ export const ExpenseForm = () => {
     })
 
     const titleChangeHandler = (event) => {
-        setUserInput({
-            enteredTitle: event.target.value,
-            ...userInput
+        // setUserInput({
+        //     enteredTitle: event.target.value,
+        //     ...userInput
+        // })
+        setUserInput((prevState) => {
+            return {...prevState, enteredTitle: event.target.value};
         })
     }
 
     const amountChangeHandler = (event) => {
-        setUserInput({
-            enteredAmount: event.target.value,
-            ...userInput
+        // setUserInput({
+        //     enteredAmount: event.target.value,
+        //     ...userInput
+        // })
+        setUserInput((prevState) => {
+            return {...prevState, enteredAmount: event.target.value};
         })
     }
 
     const dateChangeHandler = (event) => {
-        setUserInput({
-            enteredDate: event.target.value,
-            ...userInput
+        // setUserInput({
+        //     enteredDate: event.target.value,
+        //     ...userInput
+        // })
+        setUserInput((prevState) => {
+            return {...prevState, enteredDate: event.target.value};
         })
     }
 
     const descriptionChangeHandler = (event) => {
-        setUserInput({
-            enteredDescription: event.target.value,
-            ...userInput
+        // setUserInput({
+        //     enteredDescription: event.target.value,
+        //     ...userInput
+        // })
+        setUserInput((prevState) => {
+            return {...prevState, enteredDescription: event.target.value};
         })
     }
 
+    const formSubmitHandler = (event) => {
+        event.preventDefault();
+        const expenseData = {
+            title: userInput.enteredTitle,
+            amount: userInput.enteredAmount,
+            date: new Date(userInput.enteredDate),
+            description: userInput.enteredDescription
+        }
+        console.log(expenseData);
+        setUserInput({
+            enteredTitle: '',
+            enteredAmount: '',
+            enteredDate: '',
+            enteredDescription: ''
+        })
+    };
+
     return (
-        <form>
+        <form onSubmit={formSubmitHandler}>
             <div className='new-expense__controls'>
                 <div className='new-expense__control'>
                     <label>Title</label>
-                    <input type='text' onChange={titleChangeHandler}/>
+                    <input type='text' value={userInput.enteredTitle} onChange={titleChangeHandler}/>
                 </div>
                 <div className='new-expense__control'>
                     <label>Amount</label>
-                    <input type='number' min='1' step='1' onChange={amountChangeHandler}/>
+                    <input type='number' min='1' step='1' value={userInput.enteredAmount}
+                           onChange={amountChangeHandler}/>
                 </div>
                 <div className='new-expense__control'>
                     <label>Date</label>
-                    <input type='date' min='2019-01-01' max='2023-09-30' onChange={dateChangeHandler}/>
+                    <input type='date' min='2019-01-01' max='2023-09-30' value={userInput.enteredDate}
+                           onChange={dateChangeHandler}/>
                 </div>
                 <div className='new-expense__control'>
                     <label>Description</label>
-                    <input type='text' onChange={descriptionChangeHandler}/>
+                    <input type='text' value={userInput.enteredDescription} onChange={descriptionChangeHandler}/>
                 </div>
             </div>
             <div className='new-expense__actions'>
