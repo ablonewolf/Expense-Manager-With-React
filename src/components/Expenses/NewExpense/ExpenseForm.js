@@ -1,12 +1,7 @@
 import '../styles/ExpenseForm.css';
 import {useState} from "react";
 
-export const ExpenseForm = () => {
-
-    // const [enteredTitle, setEnteredTitle] = useState('');
-    // const [enteredAmount, setEnteredAmount] = useState('');
-    // const [enteredDate, setEnteredDate] = useState('');
-    // const [enteredDescription, setEnteredDescription] = useState('');
+export const ExpenseForm = (props) => {
 
     const [userInput, setUserInput] = useState({
         enteredTitle: '',
@@ -16,40 +11,24 @@ export const ExpenseForm = () => {
     })
 
     const titleChangeHandler = (event) => {
-        // setUserInput({
-        //     enteredTitle: event.target.value,
-        //     ...userInput
-        // })
         setUserInput((prevState) => {
             return {...prevState, enteredTitle: event.target.value};
         })
     }
 
     const amountChangeHandler = (event) => {
-        // setUserInput({
-        //     enteredAmount: event.target.value,
-        //     ...userInput
-        // })
         setUserInput((prevState) => {
             return {...prevState, enteredAmount: event.target.value};
         })
     }
 
     const dateChangeHandler = (event) => {
-        // setUserInput({
-        //     enteredDate: event.target.value,
-        //     ...userInput
-        // })
         setUserInput((prevState) => {
             return {...prevState, enteredDate: event.target.value};
         })
     }
 
     const descriptionChangeHandler = (event) => {
-        // setUserInput({
-        //     enteredDescription: event.target.value,
-        //     ...userInput
-        // })
         setUserInput((prevState) => {
             return {...prevState, enteredDescription: event.target.value};
         })
@@ -63,7 +42,8 @@ export const ExpenseForm = () => {
             date: new Date(userInput.enteredDate),
             description: userInput.enteredDescription
         }
-        console.log(expenseData);
+        props.onSaveExpenseData(expenseData);
+
         setUserInput({
             enteredTitle: '',
             enteredAmount: '',

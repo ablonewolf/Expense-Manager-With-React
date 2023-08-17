@@ -1,6 +1,7 @@
 import {DisplayExpenses} from "./components/Expenses/DisplayExpenses";
 import './components/Expenses/styles/Expenses.css';
 import {NewExpense} from "./components/Expenses/NewExpense/NewExpense";
+import {useState} from "react";
 
 function App() {
 
@@ -27,12 +28,22 @@ function App() {
             description: "Bus Journey from Mirpur to Gulshan."
         }
     ]
+    const [expenseData, setExpenseData] = useState(expenses);
+    const addExpenseHandler = (addedExpenseData) => {
+        const newExpense = {
+            id: expenses.length + 1,
+            ...addedExpenseData
+        }
+        setExpenseData((prevExpenses) => {
+            return [...prevExpenses, newExpense];
+        });
+    }
 
     return (
         <>
-            <NewExpense/>
+            <NewExpense onAddExpense={addExpenseHandler}/>
             <DisplayExpenses
-                expenses={expenses}
+                expenses={expenseData}
             />
         </>
     );
