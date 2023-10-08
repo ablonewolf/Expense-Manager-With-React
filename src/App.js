@@ -35,6 +35,10 @@ function App() {
     useEffect(() => {
         console.log(year)
     }, [year]);
+
+    const yearChangeHandler = (year) => {
+        setYear(year);
+    }
     const addExpenseHandler = (addedExpenseData) => {
         const newExpense = {
             id: expenses.length + 1,
@@ -51,7 +55,7 @@ function App() {
             <Card className='expenses'>
                 <ExpensesFilter
                     selected={year}
-                    setYear={setYear}
+                    yearChangeHandler={yearChangeHandler}
                 />
                 <DisplayExpenses
                     expenses={expenseData}
