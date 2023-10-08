@@ -1,6 +1,6 @@
 import ExpenseItem from "./ExpenseItem";
 import React from "react";
-import './styles/Expenses.css';
+import '../styles/Expenses.css';
 
 export const DisplayExpenses = (props) => {
     return (

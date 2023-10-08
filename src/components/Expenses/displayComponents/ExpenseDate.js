@@ -1,7 +1,7 @@
 // noinspection JSCheckFunctionSignatures
 // noinspection JSCheckFunctionSignatures
 
-import './styles/ExpenseDate.css';
+import '../styles/ExpenseDate.css';
 
 export const ExpenseDate = (props) => {
     // noinspection JSCheckFunctionSignatures
