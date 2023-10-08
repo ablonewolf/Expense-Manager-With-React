@@ -1,7 +1,9 @@
 import {DisplayExpenses} from "./components/Expenses/DisplayExpenses";
 import './components/Expenses/styles/Expenses.css';
 import {NewExpense} from "./components/Expenses/NewExpense/NewExpense";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {ExpensesFilter} from "./components/Expenses/filter/ExpensesFilter";
+import {Card} from "./components/UI/Card";
 
 function App() {
 
@@ -29,6 +31,10 @@ function App() {
         }
     ]
     const [expenseData, setExpenseData] = useState(expenses);
+    const [year, setYear] = useState('2023');
+    useEffect(() => {
+        console.log(year)
+    }, [year]);
     const addExpenseHandler = (addedExpenseData) => {
         const newExpense = {
             id: expenses.length + 1,
@@ -42,9 +48,16 @@ function App() {
     return (
         <>
             <NewExpense onAddExpense={addExpenseHandler}/>
-            <DisplayExpenses
-                expenses={expenseData}
-            />
+            <Card className='expenses'>
+                <ExpensesFilter
+                    selected={year}
+                    setYear={setYear}
+                />
+                <DisplayExpenses
+                    expenses={expenseData}
+                />
+            </Card>
+
         </>
     );
 }
