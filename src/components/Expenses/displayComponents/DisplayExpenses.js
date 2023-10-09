@@ -9,7 +9,11 @@ export const DisplayExpenses = (props) => {
             <h1>Expense Item List</h1>
             {props.expenses.map(expenseItem => {
                 return <ExpenseItem
-                    expense={expenseItem}
+                    key={expenseItem.id}
+                    amount={expenseItem.amount}
+                    title={expenseItem.title}
+                    description={expenseItem.description}
+                    date={expenseItem.date}
                 />
             })}
         </>
