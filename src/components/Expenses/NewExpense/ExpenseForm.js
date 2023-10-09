@@ -2,7 +2,6 @@ import '../styles/ExpenseForm.css';
 import {useState} from "react";
 
 export const ExpenseForm = (props) => {
-
     const [userInput, setUserInput] = useState({
         enteredTitle: '',
         enteredAmount: '',
@@ -75,6 +74,9 @@ export const ExpenseForm = (props) => {
                 </div>
             </div>
             <div className='new-expense__actions'>
+                <button onClick={props.formCloseButtonHandler}>
+                    Cancel
+                </button>
                 <button type='submit'>
                     Add Expense
                 </button>
