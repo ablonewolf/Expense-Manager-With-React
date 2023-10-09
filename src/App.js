@@ -40,13 +40,16 @@ function App() {
         setYear(year);
     }
     const addExpenseHandler = (addedExpenseData) => {
-        const newExpense = {
-            id: expenses.length + 1,
-            ...addedExpenseData
+        if (addedExpenseData.title && addedExpenseData.date && addedExpenseData.amount
+            && addedExpenseData.description) {
+            const newExpense = {
+                id: expenses.length + 1,
+                ...addedExpenseData
+            }
+            setExpenseData((prevExpenses) => {
+                return [...prevExpenses, newExpense];
+            });
         }
-        setExpenseData((prevExpenses) => {
-            return [...prevExpenses, newExpense];
-        });
     }
 
     return (
