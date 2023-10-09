@@ -1,7 +1,7 @@
 import {DisplayExpenses} from "./components/Expenses/displayComponents/DisplayExpenses";
 import './components/Expenses/styles/Expenses.css';
 import {NewExpense} from "./components/Expenses/NewExpense/NewExpense";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {ExpensesFilter} from "./components/Expenses/filterComponent/ExpensesFilter";
 import {Card} from "./components/UI/Card";
 
@@ -11,7 +11,7 @@ function App() {
         {
             id: 1,
             title: "Lunch at DU Cafe",
-            date: new Date(2021, 2, 18),
+            date: new Date(2020, 2, 18),
             amount: 100,
             description: "Outdoor lunch as I was in DU Campus."
         },
@@ -25,19 +25,23 @@ function App() {
         {
             id: 3,
             title: "Bus Fare",
-            date: new Date(2021, 3, 11),
+            date: new Date(2022, 3, 11),
             amount: 30,
             description: "Bus Journey from Mirpur to Gulshan."
+        },
+        {
+            id: 4,
+            title: "New Phone",
+            date: new Date(2023, 5, 22),
+            amount: 35000,
+            description: "New Phone as the previous phone was stolen."
         }
     ]
     const [expenseData, setExpenseData] = useState(expenses);
-    const [year, setYear] = useState('2023');
-    useEffect(() => {
-        console.log(year)
-    }, [year]);
+    const [filteredYear, setFilteredYear] = useState('all');
 
     const yearChangeHandler = (year) => {
-        setYear(year);
+        setFilteredYear(year);
     }
     const addExpenseHandler = (addedExpenseData) => {
         if (addedExpenseData.title && addedExpenseData.date && addedExpenseData.amount
@@ -57,10 +61,11 @@ function App() {
             <NewExpense onAddExpense={addExpenseHandler}/>
             <Card className='expenses'>
                 <ExpensesFilter
-                    selected={year}
+                    selected={filteredYear}
                     yearChangeHandler={yearChangeHandler}
                 />
                 <DisplayExpenses
+                    filteredYear={filteredYear}
                     expenses={expenseData}
                 />
             </Card>
