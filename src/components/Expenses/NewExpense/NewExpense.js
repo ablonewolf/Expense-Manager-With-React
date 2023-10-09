@@ -8,11 +8,11 @@ export const NewExpense = (props) => {
         props.onAddExpense(enteredExpenseData);
     }
 
-    const formOpenButtonHandler = (event) => {
+    const formOpenButtonHandler = () => {
         setFormOpen(true);
     }
 
-    const formCloseButtonHandler = (event) => {
+    const formCloseButtonHandler = () => {
         setFormOpen(false);
     }
 
