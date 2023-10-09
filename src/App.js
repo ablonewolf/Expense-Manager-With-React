@@ -1,8 +1,8 @@
-import {DisplayExpenses} from "./components/Expenses/displayComponents/DisplayExpenses";
+import {DisplayExpenses} from "./components/Expenses/DisplayComponents/DisplayExpenses";
 import './components/Expenses/styles/Expenses.css';
 import {NewExpense} from "./components/Expenses/NewExpense/NewExpense";
 import {useState} from "react";
-import {ExpensesFilter} from "./components/Expenses/filterComponent/ExpensesFilter";
+import {ExpensesFilter} from "./components/Expenses/FilterComponent/ExpensesFilter";
 import {Card} from "./components/UI/Card";
 
 function App() {
